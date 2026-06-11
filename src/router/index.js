@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue';
 import MenView from '@/views/MenView.vue';
 import WomenView from '@/views/WomenView.vue';
 import NewArrivalView from '@/views/NewArrivalView.vue';
+import ContactView from '@/views/ContactView.vue';
 import 'primeicons/primeicons.css'
 
 
@@ -28,6 +29,11 @@ const router = createRouter({
             path: '/newarrivals',
             name: 'newarrivals',
             component: NewArrivalView,
+        },
+        {
+            path: '/contact',
+            name: 'contact',
+            component: ContactView,
         },
     ],
 });

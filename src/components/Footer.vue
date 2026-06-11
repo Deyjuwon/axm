@@ -1,7 +1,11 @@
+<script setup>
+</script>
+
+
 <template>
   <footer class="rounded-t-4xl px-8 py-16 md:py-24 bg-[#695C5C] text-white">
 
-    <!-- Newsletter -->
+
     <div class="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
 
       <h2 class="text-2xl md:text-4xl font-bold">
@@ -18,10 +22,10 @@
 
     </div>
 
-    <!-- Divider spacing -->
+
     <div class="my-10 border-t border-white/20"></div>
 
-    <!-- Footer Links -->
+
     <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
 
       <div class="flex gap-6">

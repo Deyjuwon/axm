@@ -2,20 +2,23 @@
 defineProps({
   products: {
     type: Array,
-    required: true,
+    required: true
   },
+
   title: {
     type: String,
-    default: 'Featured Products',
+    default: 'Products'
   },
+
   tag: {
     type: String,
-    default: '#bestseller',
+    default: '#products'
   },
+
   showViewAll: {
     type: Boolean,
-    default: true,
-  },
+    default: true
+  }
 })
 </script>
 
@@ -57,7 +60,7 @@ defineProps({
         <!-- Image -->
         <div class="overflow-hidden rounded-lg bg-gray-100 w-full aspect-[3/4]">
           <img
-            :src="product.img"
+            :src="product.images[0]"
             :alt="product.name"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
