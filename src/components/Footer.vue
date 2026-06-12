@@ -1,9 +1,10 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 </script>
 
 
 <template>
-  <footer class="rounded-t-4xl px-8 py-16 md:py-24 bg-[#695C5C] text-white">
+  <footer class="rounded-t-4xl px-8 py-16 md:py-24 bg-[#252525] text-white">
 
 
     <div class="flex flex-col items-center text-center gap-4 max-w-2xl mx-auto">
@@ -30,7 +31,7 @@
 
       <div class="flex gap-6">
         <a href="#" class="hover:text-white transition">About Us</a>
-        <a href="#" class="hover:text-white transition">Contact Us</a>
+        <RouterLink to="/contact" class="hover:text-white transition">Contact Us</RouterLink>
         <a href="#" class="hover:text-white transition">FAQs</a>
       </div>
 
