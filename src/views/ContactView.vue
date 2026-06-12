@@ -52,7 +52,7 @@ const contactInfo = {
 
           <button
             type="submit"
-            class="w-full bg-black text-white py-4 uppercase tracking-wider font-medium hover:bg-[#695C5C] transition duration-300"
+            class="w-full cursor-pointer bg-black text-white py-4 uppercase tracking-wider font-medium hover:bg-[#695C5C] transition duration-300"
           >
             Send Message
           </button>

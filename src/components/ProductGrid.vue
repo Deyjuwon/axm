@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 defineProps({
   products: {
     type: Array,
@@ -38,13 +39,13 @@ defineProps({
         </h2>
       </div>
 
-      <a
+      <RouterLink
         v-if="showViewAll"
-        href="#"
+        to="/newarrivals"
         class="text-sm border border-gray-300 rounded-full px-4 py-1.5 text-gray-600 hover:bg-gray-50 transition"
       >
         View all
-      </a>
+    </RouterLink>
 
     </div>
 

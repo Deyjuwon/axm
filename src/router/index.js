@@ -4,6 +4,7 @@ import MenView from '@/views/MenView.vue';
 import WomenView from '@/views/WomenView.vue';
 import NewArrivalView from '@/views/NewArrivalView.vue';
 import ContactView from '@/views/ContactView.vue';
+import NotFoundView from '@/views/NotFoundView.vue';
 import 'primeicons/primeicons.css'
 
 
@@ -34,6 +35,11 @@ const router = createRouter({
             path: '/contact',
             name: 'contact',
             component: ContactView,
+        },
+        {
+            path: '/:catchAll(.*)',
+            name: 'not-found',
+            component: NotFoundView,
         },
     ],
 });

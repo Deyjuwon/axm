@@ -16,7 +16,7 @@ const isActive = (path) => route.path === path;
         New Arrivals
         <span 
           v-if="isActive('/newarrivals')"
-          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-[2px] bg-black"
+          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-2px bg-black"
         ></span>
       </RouterLink>
 
@@ -24,7 +24,7 @@ const isActive = (path) => route.path === path;
         Men
         <span 
           v-if="isActive('/men')"
-          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-[2px] bg-black"
+          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-2px bg-black"
         ></span>
       </RouterLink>
 
@@ -32,7 +32,7 @@ const isActive = (path) => route.path === path;
         Women
         <span 
           v-if="isActive('/women')"
-          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-[2px] bg-black"
+          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-2px bg-black"
         ></span>
       </RouterLink>
 
@@ -40,7 +40,7 @@ const isActive = (path) => route.path === path;
         Contact Us
         <span 
           v-if="isActive('/contact')"
-          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-[2px] bg-black"
+          class="absolute left-1/2 -translate-x-1/2 -bottom-1 w-1/2 h-2px bg-black"
         ></span>
       </RouterLink>
 
