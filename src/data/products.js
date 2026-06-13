@@ -59,6 +59,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [maleAsoOke1]
     },
@@ -68,6 +69,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [esuPants1]
     },
@@ -77,6 +79,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [maleAsoOkeJacket1]
     },
@@ -86,6 +89,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [axMHoodieTracksuit1, axMHoodieTracksuit2, axMHoodieTracksuit3]
     },
@@ -95,6 +99,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [tankTop1, tankTop2]
     },
@@ -104,6 +109,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [
             blackWhiteStripedLeatherJacket1,
@@ -118,6 +124,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [jeanJacket1, jeanJacket2]
     },
@@ -127,6 +134,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [
             twoPieceFloweryDenim1,
@@ -141,6 +149,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [asoOkeCropTop1, asoOkeCropTop2, asoOkeCropTop3]
     },
@@ -150,6 +159,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [greenTankTop1, greenTankTop2, greenTankTop3]
     },
@@ -159,6 +169,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [
             greenCorduroyShirt1,
@@ -173,6 +184,7 @@ export const products = [
         category: 'men',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [vestAndPant1, vestAndPant2]
     },
@@ -184,6 +196,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [femaleAsoOke]
     },
@@ -193,6 +206,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [twoPieceAsoOke1, twoPieceAsoOke2, twoPieceAsoOke3]
     },
@@ -202,6 +216,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [twoPieceAsoOkeJort1]
     },
@@ -211,6 +226,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [AsoOkeJort1, AsoOkeJort2, AsoOkeJort3]
     },
@@ -220,6 +236,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [AsoOkeMiniSkirt1, AsoOkeMiniSkirt2]
     },
@@ -229,6 +246,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: true,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [asoOkseGown1, asoOkeGown2, asoOkeGown3]
     },
@@ -238,6 +256,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: false,
         images: [asoOkeMiniSkirt1, asoOkeMiniSkirt2, asoOkeMiniSkirt3]
     },
@@ -247,6 +266,7 @@ export const products = [
         category: 'women',
         price: '₦100,000',
         featured: false,
+        sizes: ['S', 'M', 'L', 'XL'],
         newArrival: true,
         images: [femaleTankTop1, femaleTankTop2, femaleTankTop3, femaleTankTop4]
     }

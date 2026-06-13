@@ -52,13 +52,12 @@ defineProps({
     <!-- Grid -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
 
-      <div
+      <RouterLink
         v-for="product in products"
         :key="product.id"
-        class="group cursor-pointer"
+        :to="`/product/${product.id}`"
+        class="group cursor-pointer block"
       >
-
-        <!-- Image -->
         <div class="overflow-hidden rounded-lg bg-gray-100 w-full aspect-[3/4]">
           <img
             :src="product.images[0]"
@@ -67,7 +66,6 @@ defineProps({
           />
         </div>
 
-        <!-- Info -->
         <div class="mt-3">
           <p class="text-sm md:text-base font-medium text-gray-900">
             {{ product.name }}
@@ -76,8 +74,7 @@ defineProps({
             {{ product.price }}
           </p>
         </div>
-
-      </div>
+      </RouterLink>
 
     </div>
 
