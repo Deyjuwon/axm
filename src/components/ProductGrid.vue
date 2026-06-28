@@ -59,11 +59,11 @@ defineProps({
         class="group cursor-pointer block"
       >
         <div class="overflow-hidden rounded-lg bg-gray-100 w-full aspect-[3/4]">
-          <img
-            :src="product.images[0]"
-            :alt="product.name"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+         <img
+          :src="`http://localhost:3000${product.image_url}`"
+          :alt="product.name"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
         </div>
 
         <div class="mt-3">
@@ -71,7 +71,7 @@ defineProps({
             {{ product.name }}
           </p>
           <p class="text-sm text-gray-500 mt-0.5">
-            {{ product.price }}
+            ₦ {{ product.price }}
           </p>
         </div>
       </RouterLink>

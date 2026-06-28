@@ -1,6 +1,7 @@
 <script setup>
 import hero1 from '@/assets/hero1.jpg'
 import hero2 from '@/assets/hero2.jpg'
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -33,7 +34,8 @@ import hero2 from '@/assets/hero2.jpg'
           Styled for the Future
         </h1>
 
-        <button class="
+        <RouterLink to="/newarrivals">
+          <button class="
           bg-white/10 backdrop-blur-sm
           text-white text-sm font-semibold
           px-8 md:px-10 py-3 rounded-full
@@ -43,6 +45,7 @@ import hero2 from '@/assets/hero2.jpg'
         ">
           Shop Now
         </button>
+        </RouterLink>
 
       </div>
     </div>

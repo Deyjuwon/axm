@@ -30,6 +30,7 @@ const mobileMenuOpen = ref(false);
       <div class="flex justify-end gap-4">
         <button><i class="pi pi-search"></i></button>
         <button><i class="pi pi-shopping-bag"></i></button>
+        <button aria-label="Login"><i class="pi pi-user"></i></button>
       </div>
     </div>
 
@@ -43,25 +44,18 @@ const mobileMenuOpen = ref(false);
 
       <!-- Logo -->
       <RouterLink to="/">
-        <img
-          :src="logo"
-          alt="AXM"
-          class="h-10 object-contain"
-        />
+        <img :src="logo" alt="AXM" class="h-10 object-contain" />
       </RouterLink>
 
       <!-- Icons -->
       <div class="flex items-center gap-4">
-        <button>
+        <button aria-label="Login">
           <i class="pi pi-user text-lg"></i>
         </button>
 
         <button class="relative">
           <i class="pi pi-shopping-bag text-lg"></i>
-
-          <span
-            class="absolute -top-2 -right-2 bg-black text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center"
-          >
+          <span class="absolute -top-2 -right-2 bg-black text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center">
             2
           </span>
         </button>
@@ -70,38 +64,13 @@ const mobileMenuOpen = ref(false);
 
     <!-- Mobile Drawer -->
     <transition name="fade">
-      <div
-        v-if="mobileMenuOpen"
-        class="md:hidden border-t border-gray-200 bg-white"
-      >
+      <div v-if="mobileMenuOpen" class="md:hidden border-t border-gray-200 bg-white">
         <div class="flex flex-col py-4">
-          <RouterLink
-            to="/newarrivals"
-            class="px-5 py-3 hover:bg-gray-50"
-          >
-            New Arrivals
-          </RouterLink>
-
-          <RouterLink
-            to="/men"
-            class="px-5 py-3 hover:bg-gray-50"
-          >
-            Men
-          </RouterLink>
-
-          <RouterLink
-            to="/women"
-            class="px-5 py-3 hover:bg-gray-50"
-          >
-            Women
-          </RouterLink>
-
-          <RouterLink
-            to="/contact"
-            class="px-5 py-3 hover:bg-gray-50"
-          >
-            Contact Us
-          </RouterLink>
+          <RouterLink to="/newarrivals" class="px-5 py-3 hover:bg-gray-50">New Arrivals</RouterLink>
+          <RouterLink to="/men" class="px-5 py-3 hover:bg-gray-50">Men</RouterLink>
+          <RouterLink to="/women" class="px-5 py-3 hover:bg-gray-50">Women</RouterLink>
+          <RouterLink to="/contact" class="px-5 py-3 hover:bg-gray-50">Contact Us</RouterLink>
+          <RouterLink to="/login" class="px-5 py-3 hover:bg-gray-50">Login</RouterLink>
         </div>
       </div>
     </transition>

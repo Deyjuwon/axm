@@ -1,10 +1,15 @@
 <script setup>
 import ProductGrid from '@/components/ProductGrid.vue'
-import { products } from '@/data/products'
+import { ref, onMounted } from 'vue' 
 
-const womenProducts = products.filter(
-  product => product.category === 'women'
-)
+const womenProducts = ref([])
+
+onMounted(async () => {
+  const response = await fetch('http://localhost:3000/products')
+  const data = await response.json()
+  womenProducts.value = data.filter(product => product.category === 'women')
+
+})
 </script>
 
 <template>
