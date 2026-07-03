@@ -3,10 +3,11 @@ import ProductGrid from './ProductGrid.vue'
 import { ref, onMounted } from 'vue'
 
 const featuredProducts = ref([])
+const API_BASE = import.meta.env.VITE_API_URL
 
 onMounted(async () => {
   try {
-    const response = await fetch('http://localhost:3000/products')
+    const response = await fetch(`${API_BASE}/products`)
 
     if (!response.ok) {
       throw new Error('Failed to fetch products')

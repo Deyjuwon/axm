@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import ProductGrid from '@/components/ProductGrid.vue'
 
@@ -7,35 +7,22 @@ const route = useRoute()
 
 const product = ref(null)
 const loading = ref(true)
-
-const selectedImage = ref('')
-const selectedSize = ref('')
 const quantity = ref(1)
-const currentIndex = ref(0)
+const relatedProducts = ref([])
 
-// FETCH FROM RAILS API
+const API_BASE = import.meta.env.VITE_API_URL
+
+
+const imageUrl = (url) => {
+  if (!url) return ''
+  return url.startsWith('http') ? url : `${API_BASE}${url}`
+}
+
 const fetchProduct = async () => {
   try {
     loading.value = true
-
-    const response = await fetch(
-      `http://localhost:3000/products/${route.params.id}`
-    )
-
-    if (!response.ok) {
-      product.value = null
-      return
-    }
-
-    const data = await response.json()
-
-  
-    product.value = {
-      ...data,
-      images: data.images || [data.image_url],
-      sizes: data.sizes || [] 
-    }
-
+    const response = await fetch(`${API_BASE}/products/${route.params.id}`)
+    product.value = response.ok ? await response.json() : null
   } catch (error) {
     console.error('Failed to fetch product:', error)
     product.value = null
@@ -46,49 +33,10 @@ const fetchProduct = async () => {
 
 onMounted(fetchProduct)
 
-
-watch(product, (newProduct) => {
-  if (!newProduct) return
-
-  currentIndex.value = 0
-  selectedImage.value = newProduct.images?.[0] || ''
-  quantity.value = 1
-
-  if (newProduct.sizes?.length) {
-    selectedSize.value = newProduct.sizes[0]
-  }
-})
-
-
-const setImageByIndex = (index, images) => {
-  if (!images?.length) return
-  currentIndex.value = index
-  selectedImage.value = images[index]
-}
-
-const nextImage = () => {
-  if (!product.value?.images?.length) return
-  const images = product.value.images
-  const next = (currentIndex.value + 1) % images.length
-  setImageByIndex(next, images)
-}
-
-const prevImage = () => {
-  if (!product.value?.images?.length) return
-  const images = product.value.images
-  const prev =
-    (currentIndex.value - 1 + images.length) % images.length
-  setImageByIndex(prev, images)
-}
-
-// QUANTITY
 const increaseQty = () => quantity.value++
 const decreaseQty = () => {
   if (quantity.value > 1) quantity.value--
 }
-
-
-const relatedProducts = ref([])
 </script>
 
 <template>
@@ -107,44 +55,13 @@ const relatedProducts = ref([])
     <!-- Product Page -->
     <div v-else class="grid lg:grid-cols-2 lg:gap-20 gap-12">
 
-      <!-- Images -->
-      <div>
-
-        <div class="relative bg-[#f7f7f7] rounded-lg overflow-hidden aspect-[4/5] group">
-
-          <img
-            :src="selectedImage"
-            :alt="product.name"
-            class="w-full h-full object-cover"
-          />
-
-          <button @click="prevImage"
-            class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/30 text-white w-10 h-10 rounded-full opacity-0 group-hover:opacity-100">
-            ‹
-          </button>
-
-          <button @click="nextImage"
-            class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/30 text-white w-10 h-10 rounded-full opacity-0 group-hover:opacity-100">
-            ›
-          </button>
-
-        </div>
-
-        <!-- Thumbnails -->
-        <div v-if="product.images?.length > 1" class="flex gap-3 mt-5 overflow-x-auto">
-
-          <button
-            v-for="(image, index) in product.images"
-            :key="index"
-            @click="setImageByIndex(index, product.images)"
-            class="w-20 h-20 border rounded-md overflow-hidden"
-            :class="selectedImage === image ? 'border-black' : 'border-gray-200'"
-          >
-            <img :src="image" class="w-full h-full object-cover" />
-          </button>
-
-        </div>
-
+      <!-- Image -->
+      <div class="relative bg-[#f7f7f7] rounded-lg overflow-hidden aspect-[4/5]">
+        <img
+          :src="imageUrl(product.image_url)"
+          :alt="product.name"
+          class="w-full h-full object-cover"
+        />
       </div>
 
       <!-- Info -->
@@ -164,15 +81,12 @@ const relatedProducts = ref([])
 
         <!-- Quantity -->
         <div class="mt-8">
-
           <h3 class="font-medium mb-3">Quantity</h3>
-
           <div class="flex items-center border w-fit">
             <button @click="decreaseQty" class="w-12 h-12">−</button>
             <span class="w-12 text-center">{{ quantity }}</span>
             <button @click="increaseQty" class="w-12 h-12">+</button>
           </div>
-
         </div>
 
         <button class="w-full mt-8 bg-black text-white py-4 rounded-md">

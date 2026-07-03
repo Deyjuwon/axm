@@ -5,7 +5,7 @@ import { ref, onMounted } from 'vue'
 const menProducts = ref([])
 
 onMounted(async () => {
-  const response = await fetch('http://localhost:3000/api/v1/products')
+  const response = await fetch('http://localhost:3000/products')
   const data = await response.json()
   menProducts.value = data.filter(product => product.category === 'men')
 })
