@@ -1,14 +1,22 @@
 <script setup>
 import ProductGrid from '@/components/ProductGrid.vue'
-import { ref, onMounted } from 'vue' 
+import { ref, onMounted } from 'vue'
 
 const womenProducts = ref([])
+const API_BASE = import.meta.env.VITE_API_URL
 
 onMounted(async () => {
-  const response = await fetch('http://localhost:3000/products')
-  const data = await response.json()
-  womenProducts.value = data.filter(product => product.category === 'women')
+  try {
+    const response = await fetch(`${API_BASE}/products?category=Women`)
 
+    if (!response.ok) {
+      throw new Error('Failed to fetch women products')
+    }
+
+    womenProducts.value = await response.json()
+  } catch (error) {
+    console.error(error)
+  }
 })
 </script>
 
@@ -16,7 +24,7 @@ onMounted(async () => {
   <ProductGrid
     :products="womenProducts"
     title="Women Collection"
-    tag="#women"
-    :showViewAll=false
+    tag="#men"
+    :showViewAll="false"
   />
 </template>
